@@ -4,6 +4,20 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/datastore?activeTab=versions
 
+## [6.7.0](https://github.com/googleapis/nodejs-datastore/compare/v6.6.2...v6.7.0) (2022-04-11)
+
+
+### Features
+
+* add IN/NOT_IN/NOT_EQUALS support to cloud datastore proto ([6f22f0f](https://github.com/googleapis/nodejs-datastore/commit/6f22f0f473de8a5b07addc83523a6215e165563d))
+* define Datastore -> Firestore in Datastore mode migration long running operation metadata ([#907](https://github.com/googleapis/nodejs-datastore/issues/907)) ([652f66d](https://github.com/googleapis/nodejs-datastore/commit/652f66d2f88d80c900499890e7dd474cdbbc9c0b))
+* expose new read_time API fields, currently only available in private preview ([#932](https://github.com/googleapis/nodejs-datastore/issues/932)) ([aef00f8](https://github.com/googleapis/nodejs-datastore/commit/aef00f81864598fbd18b96dbf6986e3147d2a7a0))
+
+
+### Bug Fixes
+
+* **deps:** update dependency sinon to v13 ([#918](https://github.com/googleapis/nodejs-datastore/issues/918)) ([fa01bd4](https://github.com/googleapis/nodejs-datastore/commit/fa01bd43ba1733a17411c071850c45de2b3ecd90))
+
 ### [6.6.2](https://www.github.com/googleapis/nodejs-datastore/compare/v6.6.1...v6.6.2) (2021-11-08)
 
 

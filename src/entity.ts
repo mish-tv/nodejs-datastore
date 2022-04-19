@@ -48,6 +48,16 @@ export namespace entity {
   export const KEY_SYMBOL: unique symbol = Symbol('KEY');
 
   /**
+   * A symbol to access the exclude from indexes array from an entity object.
+   *
+   * @type {symbol}
+   * @private
+   */
+  export const EXCLUDE_FROM_INDEXES_SYMBOL: unique symbol = Symbol(
+    'EXCLUDE_FROM_INDEXES'
+  );
+
+  /**
    * Build a Datastore Double object. For long doubles, a string can be
    * provided.
    *
@@ -733,12 +743,15 @@ export namespace entity {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const entityObject: any = {};
     const properties = entityProto.properties || {};
+    const excludeFromIndexes: string[] = [];
 
     for (const property in properties) {
       const value = properties[property];
       value.propertyName = property;
       entityObject[property] = entity.decodeValueProto(value, wrapNumbers);
+      if (value.excludeFromIndexes) excludeFromIndexes.push(property);
     }
+    entityObject[entity.EXCLUDE_FROM_INDEXES_SYMBOL] = excludeFromIndexes;
 
     return entityObject;
   }

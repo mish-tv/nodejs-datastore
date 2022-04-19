@@ -967,6 +967,8 @@ describe('entity', () => {
     it('should convert entity proto to entity', () => {
       const expectedEntity = {
         name: 'Stephen',
+        number: 42,
+        [entity.EXCLUDE_FROM_INDEXES_SYMBOL]: ['name'],
       };
 
       const entityProto = {
@@ -974,6 +976,12 @@ describe('entity', () => {
           name: {
             valueType: 'stringValue',
             stringValue: expectedEntity.name,
+            excludeFromIndexes: true,
+          },
+          number: {
+            valueType: 'intValue',
+            intValue: 42,
+            excludeFromIndexes: false,
           },
         },
       };

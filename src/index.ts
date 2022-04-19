@@ -1415,6 +1415,23 @@ class Datastore extends DatastoreRequest {
   KEY: typeof entity.KEY_SYMBOL = Datastore.KEY;
 
   /**
+   * Access the Key from an Entity object.
+   *
+   * @name Datastore.EXCLUDE_FROM_INDEXES_SYMBOL
+   * @type {symbol}
+   */
+  /**
+   * Access the Key from an Entity object.
+   *
+   * @name Datastore#EXCLUDE_FROM_INDEXES_SYMBOL
+   * @type {symbol}
+   */
+  static EXCLUDE_FROM_INDEXES: typeof entity.EXCLUDE_FROM_INDEXES_SYMBOL =
+    entity.EXCLUDE_FROM_INDEXES_SYMBOL;
+  EXCLUDE_FROM_INDEXES: typeof entity.EXCLUDE_FROM_INDEXES_SYMBOL =
+    Datastore.EXCLUDE_FROM_INDEXES;
+
+  /**
    * This is one of three values which may be returned from
    * {@link Datastore#runQuery}, {@link Transaction#runQuery}, and
    * {@link Query#run} as `info.moreResults`.
